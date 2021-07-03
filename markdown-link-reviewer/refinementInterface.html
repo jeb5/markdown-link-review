@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			.horizCenterContainer {
+				display: flex;
+				justify-content: center;
+			}
+			.pageTitle {
+				background: #003a5f;
+				width: 100%;
+				color: white;
+				font-weight: bold;
+				font-size: 20px;
+				margin: 0;
+				padding: 10px;
+				padding-left: 20px;
+			}
+
+			.formBox {
+				padding: 10px;
+				background: white;
+				margin-top: 20px;
+				border-radius: 4px;
+			}
+			.form {
+				display: flex;
+				flex-direction: column;
+				min-width: 300px;
+				max-width: 600px;
+				width: 70vw;
+			}
+			.form > * {
+				margin: 7px 3px;
+				padding: 0;
+			}
+			.info {
+				background: #ddd;
+				padding: 5px;
+				border-radius: 2px;
+			}
+			.boxProgressHeading {
+				font-size: 20px;
+			}
+			.formHeader {
+				font-weight: bold;
+			}
+			.doneBtn {
+				margin-left: auto;
+				padding: 4px;
+			}
+			textarea {
+				resize: none;
+			}
+			.info {
+				font-style: italic;
+				overflow: scroll;
+				max-height: 60px;
+			}
+			body,
+			html {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				background: #1e1e1e;
+				font-family: Helvetica, Arial, sans-serif;
+			}
+			fieldset {
+				border: none;
+			}
+			.judgementFields > label {
+				font-weight: bold;
+			}
+			hr {
+				border: 1px solid grey;
+			}
+			.disabled {
+				opacity: 50%;
+			}
+		</style>
+		<title>MLR Refinement</title>
+	</head>
+	<body>
+		<h1 class="pageTitle">Markdown Link Refinement</h1>
+		<div class="horizCenterContainer">
+			<div class="formBox">
+				<form class="form disabled" action="#">
+					<h2 class="boxProgressHeading"></h2>
+					<div class="linkNameInfo info"></div>
+					<div class="formHeader">URL:</div>
+					<div class="urlInfo info"></div>
+					<div class="formHeader">Problem Identified:</div>
+					<div class="problemIdentifiedInfo info"></div>
+					<fieldset class="judgementFields">
+						<hr />
+						<label for="workingRadio">Working:</label>
+						<input type="radio" name="judgement" id="workingRadio" value="working" />
+						<label for="brokenRadio">Broken:</label>
+						<input type="radio" checked name="judgement" , id="brokenRadio" value="broken" />
+						<br />
+						<br />
+					</fieldset>
+
+					<label for="updatedProblemField" class="formHeader judgeEl">Updated Problem:</label>
+					<textarea name="updatedProblemField" id="updatedProblemField" class="judgeEl" rows="4"></textarea>
+					<label for="replacementUrlField" class="formHeader judgeEl">Replacement URL:</label>
+					<input type="text" name="replacementUrlField" class="judgeEl" id="replacementUrlField" />
+					<label for="noteField" class="formHeader">Note:</label>
+					<textarea name="noteField" id="noteField" rows="4"></textarea>
+					<div class="formFoot">
+						<button class="backBtn">&#x3C;</button>
+						<button class="fowardBtn">&#x3E;</button>
+						<button class="doneBtn" type="submit">Done</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<form action=""></form>
+		<script src="refinementScript.js"></script>
+	</body>
+</html>
