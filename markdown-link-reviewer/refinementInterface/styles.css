@@ -1,0 +1,75 @@
+#horizCenterContainer {
+	display: flex;
+	justify-content: center;
+}
+#pageTitle {
+	background: #003a5f;
+	width: 100%;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	margin: 0;
+	padding: 10px;
+	padding-left: 20px;
+}
+
+#formBox {
+	padding: 10px;
+	background: white;
+	margin-top: 20px;
+	border-radius: 4px;
+}
+form {
+	display: flex;
+	flex-direction: column;
+	min-width: 300px;
+	max-width: 600px;
+	width: 70vw;
+}
+form > * {
+	margin: 7px 3px;
+	padding: 0;
+}
+#boxProgressHeading {
+	font-size: 20px;
+}
+.label {
+	font-weight: bold;
+	user-select: none;
+}
+button {
+	border: None;
+	font-weight: bold;
+	background: #ddd;
+	border-radius: 3px;
+	font-size: large;
+}
+textarea {
+	resize: none;
+}
+.info {
+	background: #ddd;
+	padding: 5px;
+	border-radius: 2px;
+	font-style: italic;
+	overflow: scroll;
+	max-height: 60px;
+}
+body,
+html {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #1e1e1e;
+	font-family: Helvetica, Arial, sans-serif;
+}
+hr {
+	border: 1px solid grey;
+}
+.disabled1,
+.disabled2,
+.disabled3 {
+	opacity: 50%;
+	pointer-events: none;
+}

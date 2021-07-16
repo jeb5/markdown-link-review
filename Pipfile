@@ -11,6 +11,7 @@ beautifulsoup4 = "*"
 aiodns = "*"
 websockets = "*"
 selenium = "*"
+yarl = "*"
 
 [dev-packages]
 autopep8 = "*"

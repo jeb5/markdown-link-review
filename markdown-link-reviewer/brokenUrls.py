@@ -23,19 +23,21 @@ async def linkTestGenerator(urls):
 
 
 async def linkTestLoop(links, pBar):
-	unknownLinks = [link for link in links if not link.isChecked()]
 
-	urlIndex = {link.url: [] for link in unknownLinks}  # by using lists rather than the links themselves, duplicate links are supported
-	for link in unknownLinks:
+	urlIndex = {link.url: [] for link in links}  # Because the bot only considers the URL, links with duplicate URLs can be clumped together
+	for link in links:
 		urlIndex[link.url].append(link)
 
-	i = len(links) - len(unknownLinks)
+	i = 0
 	async for url, result in linkTestGenerator((url for url in urlIndex.keys())):
 		for link in urlIndex[url]:
 			pBar.update(i, str(link))
-			if type(result) == str:
-				link.setProblem(result)
-			else:
-				link.setProblem()
 			i += 1
+			if result == False:
+				link.botJudge(False)
+			elif type(result) == str:
+				link.botJudge(True, result)
+			elif type(result) == tuple:
+				link.botJudge(True, *result)
+
 	pBar.finish()

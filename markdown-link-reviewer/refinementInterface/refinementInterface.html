@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>MLR Refinement</title>
+	</head>
+	<body>
+		<h1 id="pageTitle">Markdown Link Refinement</h1>
+		<div id="horizCenterContainer">
+			<div id="formBox">
+				<form action="#" id="form">
+					<h2 id="boxProgressHeading"></h2>
+					<div class="label">Name:</div>
+					<div class="info" id="nameInfo"></div>
+					<div class="label">URL:</div>
+					<div class="info" id="urlInfo"></div>
+					<hr />
+
+					<div class="label">Problem Identified:</div>
+					<div class="info" id="problemInfo"></div>
+					<div class="label">Replacement Url Suggested:</div>
+					<div class="info" id="replacementUrlSuggestInfo"></div>
+					<hr />
+
+					<div class="checkPair">
+						<label for="brokenCheck" class="label">Is Broken:</label>
+						<input type="checkbox" name="broken" id="brokenCheck" checked />
+					</div>
+
+					<label for="problemField" class="label judge">Problem:</label>
+					<textarea name="problem" id="problemField" class="judge" rows="4"></textarea>
+
+					<div class="checkPair judge">
+						<label for="needRemoveCheck" class="label judge">Needs Removal:</label>
+						<input type="checkbox" name="needRemove" id="needRemoveCheck" />
+					</div>
+
+					<label for="replacementNameField" class="label judge fix">Replacement Name:</label>
+					<input type="text" name="replacementName" class="judge fix" id="replacementNameField" />
+
+					<label for="replacementUrlField" class="label judge fix">Replacement URL:</label>
+					<input type="text" name="replacementUrl" class="judge fix" id="replacementUrlField" />
+
+					<label for="noteField" class="label">Note:</label>
+					<textarea name="note" id="noteField" rows="4"></textarea>
+
+					<div class="formFoot">
+						<button id="backBtn" type="button">&#x3C;</button>
+						<button id="fowardBtn" type="button">&#x3E;</button>
+						<button id="doneBtn" type="submit">Done</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
